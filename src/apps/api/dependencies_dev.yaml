@@ -1,0 +1,8 @@
+imports:
+  - { resource: ../../contexts/pokedex/pokemon/infra/dependency-injection/services.yaml }
+  - { resource: ../../contexts/pokedex/pokemon/infra/dependency-injection/controllers.yaml }
+  - { resource: ../../contexts/pokedex/users/infra/dependency-injection/services.yaml }
+  - { resource: ../../contexts/pokedex/users/infra/dependency-injection/controllers.yaml }
+  - { resource: ../../contexts/pokedex/types/infra/dependency-injection/services.yaml }
+  - { resource: ../../contexts/pokedex/types/infra/dependency-injection/controllers.yaml }
+  - { resource: ../../contexts/shared/infra/dependency-injection/index.yaml }

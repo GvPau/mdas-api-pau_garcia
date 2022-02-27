@@ -1,0 +1,12 @@
+services:
+  Pokedex.Pokemon.PokemonRepository:
+    class: ../repositories/PokeApiPokemonRepository
+    arguments: []
+
+  Pokedex.Pokemon.PokemonFinder:
+    class: ../../domain/PokemonFinder
+    arguments: ['@Pokedex.Pokemon.PokemonRepository']
+
+  Pokedex.Pokemon.GetPokemonById:
+    class: ../../application/GetPokemonById
+    arguments: ['@Pokedex.Pokemon.PokemonFinder']

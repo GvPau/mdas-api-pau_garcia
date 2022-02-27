@@ -1,0 +1,8 @@
+services:
+  Apps.Pokemon.controller.GetPokemonById:
+    class: ../controllers/GetPokemonByIdController
+    arguments: ['@Pokedex.Pokemon.GetPokemonById']
+
+  Apps.Pokemon.subscriber.IncrementPokemonFavoriteCounterOnPokemonFavoriteAdded:
+    class: ../subscribers/IncrementPokemonFavoriteCounterOnPokemonFavoriteAdded
+    arguments: []

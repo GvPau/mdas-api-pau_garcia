@@ -1,0 +1,17 @@
+imports:
+  - { resource: ../../contexts/pokedex/pokemon/infra/dependency-injection/services.yaml }
+  - { resource: ../../contexts/pokedex/pokemon/infra/dependency-injection/controllers.yaml }
+  - { resource: ../../contexts/pokedex/users/infra/dependency-injection/services.yaml }
+  - { resource: ../../contexts/pokedex/users/infra/dependency-injection/controllers.yaml }
+  - { resource: ../../contexts/pokedex/types/infra/dependency-injection/services.yaml }
+  - { resource: ../../contexts/pokedex/types/infra/dependency-injection/controllers.yaml }
+  - { resource: ../../contexts/shared/infra/dependency-injection/index.yaml }
+
+services:
+  Pokedex.PokemonType.PokemonTypeRepository:
+    class: ../../../tests/contexts/pokedex/types/infra/StubTypeRepository
+    arguments: []
+
+  Pokedex.Pokemon.PokemonRepository:
+    class: ../../../tests/contexts/pokedex/pokemon/infra/StubPokemonRepository
+    arguments: []

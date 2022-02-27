@@ -1,0 +1,9 @@
+imports:
+  - { resource: ../../contexts/pokedex/types/infra/dependency-injection/services.yaml }
+  - { resource: ../../contexts/pokedex/types/infra/dependency-injection/commands.yaml }
+  - { resource: ../../contexts/shared/infra/dependency-injection/index.yaml }
+
+services:
+  Pokedex.PokemonType.PokemonTypeRepository:
+    class: ../../../tests/contexts/pokedex/types/infra/StubTypeRepository
+    arguments: []

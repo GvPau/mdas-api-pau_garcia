@@ -1,0 +1,4 @@
+services:
+  Apps.PokedexConsole.controller.GetPokemonType:
+    class: ../controllers/GetPokemonTypeController
+    arguments: ['@Pokedex.PokemonType.GetPokemonType']

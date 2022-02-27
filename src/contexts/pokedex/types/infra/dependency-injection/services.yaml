@@ -1,0 +1,12 @@
+services:
+  Pokedex.PokemonType.PokemonTypeRepository:
+    class: ../repositories/PokeApiTypeRepository
+    arguments: []
+
+  Pokedex.PokemonType.PokemonTypeSearcher:
+    class: ../../domain/PokemonTypeSearcher
+    arguments: ['@Pokedex.PokemonType.PokemonTypeRepository']
+
+  Pokedex.PokemonType.GetPokemonType:
+    class: ../../application/GetPokemonType
+    arguments: ['@Pokedex.PokemonType.PokemonTypeSearcher']
