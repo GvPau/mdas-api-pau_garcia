@@ -7,6 +7,14 @@ services:
     class: ../../domain/PokemonFinder
     arguments: ['@Pokedex.Pokemon.PokemonRepository']
 
+  Pokedex.Pokemon.FavoritePokemonCounterIncrementor:
+    class: ../../domain/FavoritePokemonCounterIncrementor
+    arguments: ['@Pokedex.Pokemon.PokemonRepository']
+
   Pokedex.Pokemon.GetPokemonById:
     class: ../../application/GetPokemonById
     arguments: ['@Pokedex.Pokemon.PokemonFinder']
+
+  Pokedex.Pokemon.IncrementPokemonFavoriteCounter:
+    class: ../../application/IncrementPokemonFavoriteCounter
+    arguments: ['@Pokedex.Pokemon.PokemonFinder', '@Pokedex.Pokemon.FavoritePokemonCounterIncrementor']
