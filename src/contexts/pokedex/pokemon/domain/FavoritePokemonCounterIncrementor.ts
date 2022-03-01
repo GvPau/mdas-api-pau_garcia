@@ -11,7 +11,7 @@ export default class favoritePokemonCounterIncrementor {
   async execute(pokemon: Pokemon) {
     pokemon.getFavoriteCounter().increaseByOne()
     console.log('POKEMON DESPUES DEL INCREMENT: ', pokemon)
-    this.pokemonRepository.saveFavoritePokemon(pokemon.getId(), pokemon.getFavoriteCounter())
+    this.pokemonRepository.saveFavoritePokemon(pokemon)
     console.log('pokemon guardado!')
   }
 }

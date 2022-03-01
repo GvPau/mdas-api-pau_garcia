@@ -7,23 +7,24 @@ import PokemonRepository from '../../domain/PokemonRepository'
 import { PokemonRepositoryNotWorkingException } from '../../domain/PokemonRepositoryNotWorkingException'
 import Weight from '../../domain/Weight'
 import FavoriteCounter from '../../domain/FavoriteCounter'
-import { FavoritePokemon } from '../../domain/FavoritePokemon'
 
 export default class PokeApiPokemonRepository implements PokemonRepository {
   private baseUrl = 'https://pokeapi.co/api/v2/pokemon/'
-  private favoritePokemons: FavoritePokemon[] = []
+  private favoritePokemons: Map<number, Pokemon> = new Map()
 
   async find(id: Id) {
     try {
       const response = await axios.get(`${this.baseUrl}${id.value}`)
+      console.log('response: ', response)
+
       const {
         data: { id: pokemonId, name, weight, height }
       } = response
 
       console.log('antes de pokemon conter: ')
-      console.log('pokemon Id: ', pokemonId.value)
+      console.log('pokemon Id: ', pokemonId)
 
-      console.log('pokemonId de api: ', pokemonId.value)
+      console.log('pokemonId de api: ', pokemonId)
 
       const pokemonCounter = this.findFavoritePokemonCounter(pokemonId)
       console.log('pokemon counter: ', pokemonCounter)
@@ -48,33 +49,32 @@ export default class PokeApiPokemonRepository implements PokemonRepository {
     return (await this.find(id)) !== null
   }
 
-  saveFavoritePokemon(pokemonId: Id, favoriteCounter: FavoriteCounter): void {
-    for (let i = 0; i < this.favoritePokemons.length; i++) {
-      if (this.favoritePokemons[i].getPokemonId().value === pokemonId.value) {
-        this.favoritePokemons[i].getCounter().increaseByOne()
-      }
-    }
+  saveFavoritePokemon(pokemon: Pokemon): void {
+    console.log('entro en save favorite pokemon')
 
-    const favoritePokemon = FavoritePokemon.create(pokemonId, favoriteCounter)
-    if (!this.favoritePokemons.includes(favoritePokemon)) this.favoritePokemons.push(favoritePokemon)
+    if (this.favoritePokemons.has(pokemon.getId().value)) {
+      console.log('entro en update de pokemon')
+      this.favoritePokemons.set(pokemon.getId().value, pokemon)
+    } else {
+      console.log('guardo pokemon')
+
+      this.favoritePokemons.set(pokemon.getId().value, pokemon)
+    }
   }
 
   findFavoritePokemonCounter(pokemonId: number): number {
-    console.log('this,favoritePokemons: ', this.favoritePokemons)
-    console.log('pokemonid:', pokemonId)
+    console.log('entro en findFavoritePOkemon')
+    console.log('favorite pokemons: ', this.favoritePokemons)
 
-    console.log('antes de buscar el pokemon favorito si existe')
-    for (let i = 0; i < this.favoritePokemons.length; i++) {
-      console.log('valor de pokemon id en array: ', this.favoritePokemons[i].getPokemonId())
+    if (this.favoritePokemons.size > 0) {
+      const pokemon = this.favoritePokemons.get(pokemonId)
+      console.log('pokemon en find favorite: ', pokemon)
 
-      if (this.favoritePokemons[i].getPokemonId().value === pokemonId) {
-        console.log('encuentro el pokemon, devuelo el counter')
-
-        return this.favoritePokemons[i].getCounter().value
+      if (!pokemon) {
+        return 0
       }
+      return pokemon.getFavoriteCounter().value
     }
-    console.log('no encuentro pokemon como favorito')
-
     return 0
   }
 }
