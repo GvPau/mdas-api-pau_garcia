@@ -3,6 +3,7 @@ import Uuid from '../../../../../src/contexts/shared/domain/Uuid'
 import { UuidNotValidException } from '../../../../../src/contexts/shared/domain/UuidNotValidException'
 import FavoritePokemonMother from '../domain/FavoritePokemonMother'
 import UserMother from '../domain/UserMother'
+import { MockEventBus } from '../infra/bus/MockEventBus'
 
 describe('AddFavoritePokemonToUser', () => {
   it('should add a favorite pokemon to a user', async () => {
@@ -21,7 +22,9 @@ describe('AddFavoritePokemonToUser', () => {
       execute: executeCreatorSpy
     }))
 
-    const addFavoritePokemonToUser = new AddFavoritePokemonToUser(userFinder(), favoritePokemonCreator())
+    const eventBus = new MockEventBus()
+
+    const addFavoritePokemonToUser = new AddFavoritePokemonToUser(userFinder(), favoritePokemonCreator(), eventBus)
 
     // Act
     await addFavoritePokemonToUser.execute(userId.value, pokemonId)
@@ -44,7 +47,9 @@ describe('AddFavoritePokemonToUser', () => {
       execute: jest.fn()
     }))
 
-    const addFavoritePokemonToUser = new AddFavoritePokemonToUser(userFinder(), favoritePokemonCreator())
+    const eventBus = new MockEventBus()
+
+    const addFavoritePokemonToUser = new AddFavoritePokemonToUser(userFinder(), favoritePokemonCreator(), eventBus)
 
     // Act
     const expectWrapper = expect(async () => {

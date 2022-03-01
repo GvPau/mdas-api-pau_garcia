@@ -8,7 +8,8 @@ const pokeApiResponse = {
   name: 'Bulbasaur',
   height: 7,
   weight: 69,
-  id: 1
+  id: 1,
+  favoriteCounter: 0
 }
 
 describe('PokeApiPokemonRepository', () => {
@@ -26,7 +27,13 @@ describe('PokeApiPokemonRepository', () => {
 
     // Assert
     expect(pokemonResult).toEqual(
-      PokemonMother.create(pokeApiResponse.id, pokeApiResponse.name, pokeApiResponse.height, pokeApiResponse.weight)
+      PokemonMother.create(
+        pokeApiResponse.id,
+        pokeApiResponse.name,
+        pokeApiResponse.height,
+        pokeApiResponse.weight,
+        pokeApiResponse.favoriteCounter
+      )
     )
   })
 
