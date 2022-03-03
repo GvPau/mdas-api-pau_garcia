@@ -7,7 +7,7 @@ export default class RabbitMqEventbus implements EventBus {
   private exchange: Exchange
 
   constructor() {
-    this.connection = new Connection('amqp://guest:guest@localhost')
+    this.connection = new Connection('amqp://guest:guest@rabbitmq')
     this.exchange = this.connection.declareExchange('domain_events', 'fanout')
   }
 
