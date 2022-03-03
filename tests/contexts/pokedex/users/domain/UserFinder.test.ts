@@ -1,5 +1,5 @@
-import UserFinder from '../../../../../src/contexts/pokedex/users/domain/UserFinder'
-import { UserNotFoundException } from '../../../../../src/contexts/pokedex/users/domain/UserNotFoundException'
+import UserFinder from '../../../../../src/contexts/users/users/domain/UserFinder'
+import { UserNotFoundException } from '../../../../../src/contexts/users/users/domain/UserNotFoundException'
 import UserMother from './UserMother'
 
 describe('UserFinder', () => {

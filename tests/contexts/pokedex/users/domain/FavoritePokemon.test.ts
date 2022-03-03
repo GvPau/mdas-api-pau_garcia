@@ -1,6 +1,6 @@
 import FavoritePokemonMother from './FavoritePokemonMother'
-import { PokemonAlreadyFavoriteException } from '../../../../../src/contexts/pokedex/users/domain/PokemonAlreadyFavoriteException'
-import { FavoritePokemons } from '../../../../../src/contexts/pokedex/users/domain/FavoritePokemons'
+import { PokemonAlreadyFavoriteException } from '../../../../../src/contexts/users/users/domain/PokemonAlreadyFavoriteException'
+import { FavoritePokemons } from '../../../../../src/contexts/users/users/domain/FavoritePokemons'
 
 describe('FavoritePokemon', () => {
   it('should throw an exception when pokemon is already favorite', async () => {

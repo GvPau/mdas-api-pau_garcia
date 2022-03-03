@@ -1,4 +1,4 @@
-import { CreateUser } from '../../../../../src/contexts/pokedex/users/application/CreateUser'
+import { CreateUser } from '../../../../../src/contexts/users/users/application/CreateUser'
 import UserMother from '../domain/UserMother'
 
 describe('CreateNewUser', () => {

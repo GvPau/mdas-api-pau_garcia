@@ -1,4 +1,4 @@
-import { PokemonId } from '../../../../../src/contexts/pokedex/users/domain/PokemonId'
+import { PokemonId } from '../../../../../src/contexts/users/users/domain/PokemonId'
 import NumberMother from '../../../shared/domain/NumberMother'
 
 export default class PokemonIdMother {

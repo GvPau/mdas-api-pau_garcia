@@ -1,4 +1,4 @@
-import { InMemoryUserRepository } from '../../../../../src/contexts/pokedex/users/infra/repositories/InMemoryUserRepository'
+import { InMemoryUserRepository } from '../../../../../src/contexts/users/users/infra/repositories/InMemoryUserRepository'
 import UserMother from '../domain/UserMother'
 
 describe('InMemoryUserRepository', () => {

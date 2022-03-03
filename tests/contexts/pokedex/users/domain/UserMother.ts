@@ -1,6 +1,6 @@
-import { User } from '../../../../../src/contexts/pokedex/users/domain/User'
-import UserId from '../../../../../src/contexts/pokedex/users/domain/UserId'
-import UserName from '../../../../../src/contexts/pokedex/users/domain/UserName'
+import { User } from '../../../../../src/contexts/users/users/domain/User'
+import UserId from '../../../../../src/contexts/users/users/domain/UserId'
+import UserName from '../../../../../src/contexts/users/users/domain/UserName'
 import UserIdMother from './UserIdMother'
 import UserNameMother from './UserNameMother'
 

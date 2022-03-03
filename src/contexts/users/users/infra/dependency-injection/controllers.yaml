@@ -1,8 +1,8 @@
 services:
   Apps.Users.controller.AddFavoritePokemonToUser:
     class: ../controllers/AddFavoritePokemonToUserController
-    arguments: ['@Pokedex.Users.AddFavoritePokemonToUser']
+    arguments: ['@Users.Users.AddFavoritePokemonToUser']
 
   Apps.Users.controller.CreateUser:
     class: ../controllers/CreateUserController
-    arguments: ['@Pokedex.Users.CreateUser']
+    arguments: ['@Users.Users.CreateUser']

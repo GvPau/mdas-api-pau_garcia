@@ -1,4 +1,4 @@
-import { AddFavoritePokemonToUser } from '../../../../../src/contexts/pokedex/users/application/AddFavoritePokemonToUser'
+import { AddFavoritePokemonToUser } from '../../../../../src/contexts/users/users/application/AddFavoritePokemonToUser'
 import Uuid from '../../../../../src/contexts/shared/domain/Uuid'
 import { UuidNotValidException } from '../../../../../src/contexts/shared/domain/UuidNotValidException'
 import FavoritePokemonMother from '../domain/FavoritePokemonMother'

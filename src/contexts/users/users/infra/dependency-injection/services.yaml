@@ -5,20 +5,20 @@ services:
 
   Pokedex.Users.FavoritePokemonCreator:
     class: ../../domain/FavoritePokemonCreator
-    arguments: ['@Pokedex.Users.UserRepository']
+    arguments: ['@Users.Users.UserRepository']
 
   Pokedex.Users.UserFinder:
     class: ../../domain/UserFinder
-    arguments: ['@Pokedex.Users.UserRepository']
+    arguments: ['@Users.Users.UserRepository']
 
   Pokedex.Users.UserCreator:
     class: ../../domain/UserCreator
-    arguments: ['@Pokedex.Users.UserRepository']
+    arguments: ['@Users.Users.UserRepository']
 
   Pokedex.Users.AddFavoritePokemonToUser:
     class: ../../application/AddFavoritePokemonToUser
-    arguments: ['@Pokedex.Users.UserFinder', '@Pokedex.Users.FavoritePokemonCreator', '@Shared.EventBus']
+    arguments: ['@Users.Users.UserFinder', '@Users.Users.FavoritePokemonCreator', '@Shared.EventBus']
 
   Pokedex.Users.CreateUser:
     class: ../../application/CreateUser
-    arguments: ['@Pokedex.Users.UserCreator']
+    arguments: ['@Users.Users.UserCreator']

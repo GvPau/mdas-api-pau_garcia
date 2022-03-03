@@ -1,5 +1,5 @@
-import { FavoritePokemon } from '../../../../../src/contexts/pokedex/users/domain/FavoritePokemon'
-import { PokemonId } from '../../../../../src/contexts/pokedex/users/domain/PokemonId'
+import { FavoritePokemon } from '../../../../../src/contexts/users/users/domain/FavoritePokemon'
+import { PokemonId } from '../../../../../src/contexts/users/users/domain/PokemonId'
 import PokemonIdMother from './PokemonIdMother'
 
 export default class FavoritePokemonMother {
