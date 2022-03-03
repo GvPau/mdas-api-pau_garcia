@@ -16,7 +16,6 @@ export default class GetPokemonByIdController extends BaseController {
     try {
       const { id } = req.params
       const pokemon = await this.useCase.execute(parseInt(id))
-
       const pokemonValues: any = {}
       Object.keys(pokemon).forEach((key) => {
         pokemonValues[key] = (pokemon as any)[key].value

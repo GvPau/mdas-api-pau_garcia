@@ -28,8 +28,8 @@
 
 1. [Install Docker](https://www.docker.com/get-started)
 2. [Install NodeJS (Required by CLI pokedex)](https://nodejs.org/es/download/)
-2. Clone this project: `https://github.com/kevensaldana/mdas-api-g6.git`
-3. Move to the project folder: `cd mdas-api-g6`
+2. Clone this project: `https://github.com/GvPau/mdas-api-pau_garcia`
+3. Move to the project folder: `cd mdas-api-pau_garcia`
 4. npm install
 
 # 3. 🚀 Apps

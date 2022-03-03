@@ -1,0 +1,24 @@
+services:
+  Users.Users.UserRepository:
+    class: ../repositories/InMemoryUserRepository
+    arguments: []
+
+  Users.Users.FavoritePokemonCreator:
+    class: ../../domain/FavoritePokemonCreator
+    arguments: ['@Users.Users.UserRepository']
+
+  Users.Users.UserFinder:
+    class: ../../domain/UserFinder
+    arguments: ['@Users.Users.UserRepository']
+
+  Users.Users.UserCreator:
+    class: ../../domain/UserCreator
+    arguments: ['@Users.Users.UserRepository']
+
+  Users.Users.AddFavoritePokemonToUser:
+    class: ../../application/AddFavoritePokemonToUser
+    arguments: ['@Users.Users.UserFinder', '@Users.Users.FavoritePokemonCreator', '@Shared.EventBus']
+
+  Users.Users.CreateUser:
+    class: ../../application/CreateUser
+    arguments: ['@Users.Users.UserCreator']

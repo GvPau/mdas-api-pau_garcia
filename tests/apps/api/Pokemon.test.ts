@@ -23,7 +23,8 @@ describe('Pokemon', () => {
                   id: 1,
                   name: 'Bulbasaur',
                   height: 7,
-                  weight: 69
+                  weight: 69,
+                  favoriteCounter: 0
                 }
               })
             })

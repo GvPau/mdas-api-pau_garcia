@@ -8,4 +8,8 @@ export default abstract class NumberValueObject {
   equals(other: NumberValueObject) {
     return this.value === other.value
   }
+
+  increaseByOne() {
+    this.value++
+  }
 }

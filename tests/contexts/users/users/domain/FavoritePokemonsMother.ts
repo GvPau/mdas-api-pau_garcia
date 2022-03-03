@@ -1,4 +1,4 @@
-import { FavoritePokemons } from '../../../../../src/contexts/pokedex/users/domain/FavoritePokemons'
+import { FavoritePokemons } from '../../../../../src/contexts/users/users/domain/FavoritePokemons'
 import FavoritePokemonMother from './FavoritePokemonMother'
 
 export default class FavoritePokemonsMother {

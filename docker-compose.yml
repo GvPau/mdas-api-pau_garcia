@@ -1,7 +1,21 @@
-version: "3.9"  
+version: '3.9'
 services:
+  web:
+    build: .
+    command: bash -c "npm run build && npm run start"
+    ports:
+      - '5001:5001'
+    volumes:
+      - .:/code:delegated
+    networks:
+      - rabbitmq_nodejs
   rabbitmq:
     image: 'rabbitmq:3.8-management'
     ports:
       - 5672:5672
       - 15672:15672
+    networks:
+      - rabbitmq_nodejs
+networks:
+  rabbitmq_nodejs:
+    driver: bridge

@@ -1,5 +1,5 @@
-import { UserAlreadyExistException } from '../../../../../src/contexts/pokedex/users/domain/UserAlreadyExistException'
-import UserCreator from '../../../../../src/contexts/pokedex/users/domain/UserCreator'
+import { UserAlreadyExistException } from '../../../../../src/contexts/users/users/domain/UserAlreadyExistException'
+import UserCreator from '../../../../../src/contexts/users/users/domain/UserCreator'
 import UserMother from '../domain/UserMother'
 
 describe('UserCreator', () => {

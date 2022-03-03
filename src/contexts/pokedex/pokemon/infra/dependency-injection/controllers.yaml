@@ -5,4 +5,4 @@ services:
 
   Apps.Pokemon.subscriber.IncrementPokemonFavoriteCounterOnPokemonFavoriteAdded:
     class: ../subscribers/IncrementPokemonFavoriteCounterOnPokemonFavoriteAdded
-    arguments: []
+    arguments: ['@Pokedex.Pokemon.IncrementPokemonFavoriteCounter']
