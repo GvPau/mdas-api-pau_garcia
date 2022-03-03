@@ -15,8 +15,6 @@ export default class PokeApiPokemonRepository implements PokemonRepository {
   async find(id: Id) {
     try {
       const response = await axios.get(`${this.baseUrl}${id.value}`)
-      console.log('response: ', response)
-
       const {
         data: { id: pokemonId, name, weight, height }
       } = response
