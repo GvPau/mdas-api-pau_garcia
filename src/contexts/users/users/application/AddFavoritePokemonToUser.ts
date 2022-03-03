@@ -21,7 +21,6 @@ export class AddFavoritePokemonToUser {
     await this.favoritePokemonCreator.execute(user, new FavoritePokemon(new PokemonId(pokemonId)))
     console.log('AddFavoritePokemonToUser', JSON.stringify(user.getFavoritePokemons()))
     const events = user.pullDomainEvents()
-    console.log(events)
     this.eventBus.publish(events)
   }
 }

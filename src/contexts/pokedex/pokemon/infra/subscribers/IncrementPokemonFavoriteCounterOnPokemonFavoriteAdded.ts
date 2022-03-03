@@ -9,7 +9,6 @@ export class IncrementPokemonFavoriteCounterOnPokemonFavoriteAdded implements Do
   }
 
   on(domainEvent: string) {
-    console.log('IncrementPokemonFavoriteCounterOnPokemonFavoriteAdded', domainEvent)
     this.useCase.execute(parseInt(JSON.parse(domainEvent).data.attributes.pokemonId))
   }
 }

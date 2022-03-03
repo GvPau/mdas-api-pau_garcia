@@ -19,14 +19,7 @@ export default class PokeApiPokemonRepository implements PokemonRepository {
         data: { id: pokemonId, name, weight, height }
       } = response
 
-      console.log('antes de pokemon conter: ')
-      console.log('pokemon Id: ', pokemonId)
-
-      console.log('pokemonId de api: ', pokemonId)
-
       const pokemonCounter = this.findFavoritePokemonCounter(pokemonId)
-      console.log('pokemon counter: ', pokemonCounter)
-
       return Pokemon.create(
         new Id(pokemonId),
         new Name(name),
@@ -48,26 +41,16 @@ export default class PokeApiPokemonRepository implements PokemonRepository {
   }
 
   saveFavoritePokemon(pokemon: Pokemon): void {
-    console.log('entro en save favorite pokemon')
-
     if (this.favoritePokemons.has(pokemon.getId().value)) {
-      console.log('entro en update de pokemon')
       this.favoritePokemons.set(pokemon.getId().value, pokemon)
     } else {
-      console.log('guardo pokemon')
-
       this.favoritePokemons.set(pokemon.getId().value, pokemon)
     }
   }
 
   findFavoritePokemonCounter(pokemonId: number): number {
-    console.log('entro en findFavoritePOkemon')
-    console.log('favorite pokemons: ', this.favoritePokemons)
-
     if (this.favoritePokemons.size > 0) {
       const pokemon = this.favoritePokemons.get(pokemonId)
-      console.log('pokemon en find favorite: ', pokemon)
-
       if (!pokemon) {
         return 0
       }

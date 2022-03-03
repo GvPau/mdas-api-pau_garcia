@@ -16,7 +16,6 @@ export default class RabbitMqStarter {
   }
 
   start(configs: RabbitMqStarterConfig[]) {
-    console.log('RabbitMqStarter', configs)
     configs.forEach(async (config) => {
       const queue = this.connection.declareQueue(config.queue)
       queue.bind(this.exchange)
